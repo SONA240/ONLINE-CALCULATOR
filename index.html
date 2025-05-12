@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="calculator-container shadow rounded-4 p-4">
+    <h2 class="text-center mb-3">
+       <strong>Smart Calculator</strong>
+    </h2>
+
+    <div class="d-flex justify-content-center mb-3">
+      <button onclick="toggleTheme()" class="btn btn-outline-secondary btn-sm">Toggle Theme </button>
+    </div>
+
+    <input type="text" id="display" class="form-control mb-3 text-end display" readonly />
+
+    <div class="button-grid mb-3">
+      <button onclick="clearDisplay()" class="btn btn-danger">AC</button>
+      <button onclick="backspace()" class="btn btn-warning">DEL</button>
+      <button onclick="append('%')" class="btn btn-secondary">%</button>
+      <button onclick="append('/')" class="btn btn-secondary">÷</button>
+
+      <button onclick="append('7')" class="btn btn-number">7</button>
+      <button onclick="append('8')" class="btn btn-number">8</button>
+      <button onclick="append('9')" class="btn btn-number">9</button>
+      <button onclick="append('*')" class="btn btn-secondary">×</button>
+
+      <button onclick="append('4')" class="btn btn-number">4</button>
+      <button onclick="append('5')" class="btn btn-number">5</button>
+      <button onclick="append('6')" class="btn btn-number">6</button>
+      <button onclick="append('-')" class="btn btn-secondary">−</button>
+
+      <button onclick="append('1')" class="btn btn-number">1</button>
+      <button onclick="append('2')" class="btn btn-number">2</button>
+      <button onclick="append('3')" class="btn btn-number">3</button>
+      <button onclick="append('+')" class="btn btn-secondary">+</button>
+
+      <button onclick="append('0')" class="btn btn-number">0</button>
+      <button onclick="append('.')" class="btn btn-number">.</button>
+      <button onclick="toggleSign()" class="btn btn-secondary">±</button>
+      <button onclick="calculate()" class="btn btn-success">=</button>
+    </div>
+
+    <!--  scientific functions  -->
+    <div class="button-grid mb-3">
+      <button onclick="square()" class="btn btn-outline-info">x²</button>
+      <button onclick="reciprocal()" class="btn btn-outline-info">1/x</button>
+      <button onclick="sqrt()" class="btn btn-outline-info">√</button>
+      <button disabled class="btn btn-outline-light invisible">--</button>
+    </div>
+
+    <div class="d-grid mb-3">
+      <button onclick="copyResult()" class="btn btn-outline-primary btn-sm">📋 Copy Result</button>
+    </div>
+
+    <div class="history-box mt-3">
+      <h5 class="text-start">🕒 History</h5>
+      <ul id="historyList" class="list-unstyled small"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
